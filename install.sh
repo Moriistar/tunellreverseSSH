@@ -34,9 +34,13 @@ setup_iran() {
         echo -e "${GREEN}GatewayPorts added to sshd_config.${NC}"
     fi
 
-    # Restart SSH Service
+    # Restart SSH Service (Fixed for Ubuntu/Debian/CentOS)
     echo -e "${GREEN}>>> Restarting SSH service...${NC}"
-    systemctl restart sshd.service
+    if systemctl list-units --full -all | grep -Fq "sshd.service"; then
+        systemctl restart sshd
+    else
+        systemctl restart ssh
+    fi
 
     echo -e "${GREEN}>>> Iran server configuration completed.${NC}"
     echo -e "${RED}NOTE: According to instructions, a reboot is recommended.${NC}"
