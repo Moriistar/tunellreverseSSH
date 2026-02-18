@@ -9,4 +9,4 @@
 در هر دو سرور (ایران و خارج) کافیست فقط دستور زیر را اجرا کنید تا منوی مدیریت نمایش داده شود:
 
 ```bash
-bash <(curl -Ls https://raw .githubusercontent.com/Moriistar /tunellreverseSSH/main/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/Moriistar/tunellreverseSSH/main/install.sh)
